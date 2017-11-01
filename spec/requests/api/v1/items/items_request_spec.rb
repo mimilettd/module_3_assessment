@@ -27,5 +27,28 @@ describe "Items API" do
       expect(object["description"]).to eq(item.description)
       expect(object["image_url"]).to eq(item.image_url)
     end
+
+    it "can delete an item" do
+      item = create(:item)
+
+      delete "/api/v1/items/#{item.id}"
+
+      expect(response.status).to eq(404)
+
+      expect(JSON.parse(response.body)["error"]).to eq("not-found")
+    end
+
+    it "can create an item" do
+
+      post "/api/v1/items", {name: "4k TV", description: "The best TV ever", image_url: "https://images-na.ssl-images-amazon.com/images/I/71AFwHhbUZL._SY450_.jpg"}
+
+      expect(response.status).to eq(201)
+
+      object = JSON.parse(response.body)
+
+      expect(object["name"]).to eq("4k TV")
+      expect(object["description"]).to eq("The best TV ever")
+      expect(object["image_url"]).to eq("https://images-na.ssl-images-amazon.com/images/I/71AFwHhbUZL._SY450_.jpg")
+    end
   end
 end
