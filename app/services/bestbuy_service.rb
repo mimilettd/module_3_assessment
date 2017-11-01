@@ -6,7 +6,7 @@ class BestbuyService
 
   end
   def fetch_by_zip(zip)
-    response = conn.get("/v1/stores(area(#{zip},25))?format=json&show=all&apiKey=#{ENV['bestbuy_api_key']}")
+    response = conn.get("/v1/stores(area(#{zip},25))?format=json&show=all&pageSize=100&apiKey=#{ENV['bestbuy_api_key']}")
     JSON.parse(response.body)["stores"]
   end
 

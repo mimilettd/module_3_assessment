@@ -11,7 +11,7 @@ feature "User enters zip into search box" do
     expect(current_path).to eq("/search")
 
     expect(page).to have_content("17 Total Stores")
-    expect(page).to have_css("store", :count => 10)
+    expect(page).to have_css(".store", :count => 10)
     expect(page).to have_css(".longname")
     expect(page).to have_css(".city")
     expect(page).to have_css(".distance")
