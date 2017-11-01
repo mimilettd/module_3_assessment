@@ -27,5 +27,15 @@ describe "Items API" do
       expect(object["description"]).to eq(item.description)
       expect(object["image_url"]).to eq(item.image_url)
     end
+
+    it "can delete an item" do
+      item = create(:item)
+
+      delete "/api/v1/items/#{item.id}"
+
+      expect(response).to be_success
+
+      expect(JSON.parse(response.body)["message"]).to eq("Successfully deleted #{item.name}")
+    end
   end
 end
