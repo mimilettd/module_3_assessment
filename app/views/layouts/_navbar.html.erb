@@ -8,6 +8,10 @@
     </button>
     <a class="navbar-brand" href="/">Storedom</a>
   </div>
+  <%= form_tag(search_index_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Best Buy Stores" %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li>

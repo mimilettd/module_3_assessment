@@ -4,7 +4,7 @@ feature "User enters zip into search box" do
   scenario "and sees stores within 25 miles of zip" do
     visit "/"
 
-    fill_in "q", with: "80202"
+    fill_in "search", with: "80202"
 
     click_on "Search"
 
