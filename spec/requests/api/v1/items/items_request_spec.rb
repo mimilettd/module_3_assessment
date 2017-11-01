@@ -33,9 +33,9 @@ describe "Items API" do
 
       delete "/api/v1/items/#{item.id}"
 
-      expect(response).to be_success
+      expect(response.status).to eq(404)
 
-      expect(JSON.parse(response.body)["message"]).to eq("Successfully deleted #{item.name}")
+      expect(JSON.parse(response.body)["error"]).to eq("not-found")
     end
   end
 end

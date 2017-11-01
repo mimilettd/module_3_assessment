@@ -10,8 +10,6 @@ class Api::V1::ItemsController < Api::V1::ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
-    render json: {
-      message: "Successfully deleted #{item.name}"
-    }
+    render :json => {:error => "not-found"}.to_json, :status => 404
   end
 end
