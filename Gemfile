@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "figaro"
 gem "faraday"
+gem 'will_paginate'
 
 group :development do
   gem "spring"
