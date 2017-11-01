@@ -14,6 +14,7 @@ gem "less-rails-bootstrap"
 gem "figaro"
 gem "faraday"
 gem 'will_paginate'
+gem "active_model_serializers"
 
 group :development do
   gem "spring"
