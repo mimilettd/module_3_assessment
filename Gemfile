@@ -11,10 +11,17 @@ gem "jbuilder", "~> 2.0"
 gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
-gem "minitest-rails"
+gem "figaro"
+gem "faraday"
 
 group :development do
   gem "spring"
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem "factory_bot_rails"
 end
 
 group :development, :test do
