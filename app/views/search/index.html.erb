@@ -1,4 +1,4 @@
-<h1><%= @stores.count %> Total Stores</h1>
+<h1><%= @store_collection.count %> Total Stores</h1>
 
 <% @stores.each do |store| %>
   <div class="store">
@@ -8,4 +8,8 @@
     <p class="phone"><%= store.phone %></p>
     <p class="type"><%= store.type %></p>
   </div>
+<% end %>
+
+<% if @stores.current_page < @stores.total_pages %>
+   <%= link_to "Next", "#{search_index_path}?page=#{@stores.current_page+1}" %>
 <% end %>
